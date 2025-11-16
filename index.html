@@ -7,21 +7,30 @@
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
     <script src="TemplateData/UnityProgress.js"></script>
-     <link rel="manifest" href="/manifest.json">
+    <link rel="manifest" href="/manifest.json">
     <script src="Build/UnityLoader.js"></script>
     <script>
-      var gameInstance = UnityLoader.instantiate("gameContainer", "Build/WebGL.json", {onProgress: UnityProgress});
+      var gameInstance = UnityLoader.instantiate("gameContainer", "Build/WebGL.json", {
+        onProgress: UnityProgress
+      });
+
+      // Auto-fullscreen on first user click
+      document.addEventListener("click", function () {
+        if (gameInstance && typeof gameInstance.SetFullscreen === "function") {
+          gameInstance.SetFullscreen(1);
+        }
+      }, { once: true }); // only trigger once
     </script>
     <script>
-  if ("serviceWorker" in navigator) {
-    window.addEventListener("load", () => {
-      navigator.serviceWorker
-        .register("/sw.js")
-        .then(reg => console.log("Service Worker registered:", reg))
-        .catch(err => console.error("Service Worker registration failed:", err));
-    });
-  }
-</script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+          navigator.serviceWorker
+            .register("/sw.js")
+            .then(reg => console.log("Service Worker registered:", reg))
+            .catch(err => console.error("Service Worker registration failed:", err));
+        });
+      }
+    </script>
   </head>
   <body>
     <div class="webgl-content">
