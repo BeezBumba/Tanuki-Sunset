@@ -1,13 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-us">
   <head>
-    <title>Tanuki Sunset</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/x-icon" href="img/cover.png" />
-    <link rel="shortcut icon" type="image/x-icon" href="img/cover.png" />
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Unity WebGL Player | Tanuki Sunset</title>
+    <link rel="shortcut icon" href="TemplateData/favicon.ico">
+    <link rel="stylesheet" href="TemplateData/style.css">
+    <script src="TemplateData/UnityProgress.js"></script>
     <script src="Build/UnityLoader.js"></script>
     <script>
-      var gameInstance = UnityLoader.instantiate("gameContainer", "tanuki.json");
+      var gameInstance = UnityLoader.instantiate("gameContainer", "Build/WebGL.json", {onProgress: UnityProgress});
     </script>
     <script>
       if ("serviceWorker" in navigator) {
@@ -21,7 +23,7 @@
     </script>
     <link rel="manifest" href="/manifest.json">
 
-    <!-- Added CSS to make the canvas fill the viewport -->
+    <!-- Added CSS -->
     <style>
       html, body {
         margin: 0;
