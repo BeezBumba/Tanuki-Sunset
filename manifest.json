@@ -1,0 +1,21 @@
+{
+  "name": "Tanuki Sunset",
+  "short_name": "Tanuki",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#ff6600",
+  "orientation": "landscape",
+  "icons": [
+    {
+      "src": "/TanukiSunset-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/TanukiSunset-256.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    }
+  ]
+}
