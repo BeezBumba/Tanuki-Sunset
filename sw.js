@@ -17,7 +17,10 @@ const urlsToCache = [
   "/progressFull.Light.png",
   "/progressLogo.Dark.png",
   "/progressLogo.Light.png",
-  "/webgl-logo.png"
+  "/webgl-logo.png",
+  "/TanukiSunset-256.png",
+  "/TanukiSunset-512.png",
+  "/manifest.json"
 ];
 
 self.addEventListener("install", event => {
